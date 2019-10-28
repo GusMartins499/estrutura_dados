@@ -3,23 +3,18 @@ package fila;
 public class Fila {
 	static int tamanhoFila = 0;
 	Elemento inicio, fim;
-	// int [] fila;
-	// ArrayList<Elemento> fila = new ArrayList<Elemento>();
 
 	// INSERIR
 	public void criaFila(int valor) {
-		tamanhoFila++;
 		Elemento elementoNovo = new Elemento(valor);
 		if (inicio == null) {
-			// elemento.proximo = elemento;
 			inicio = elementoNovo;
 			fim = elementoNovo;
-			// fila.add(elementoNovo);
 		} else {
 			fim.proximo = elementoNovo;
 			fim = elementoNovo;
-			// fila.add(elementoNovo);
 		}
+		tamanhoFila++;
 
 	}
 
@@ -45,6 +40,7 @@ public class Fila {
 		if (estaVazio() == false) {
 			Elemento aux = inicio;
 			inicio = inicio.proximo;
+			tamanhoFila--;
 			System.out.println("Elemento retirado da fila: " + aux.valor);
 		}
 
@@ -53,7 +49,6 @@ public class Fila {
 	// TAMANHO
 	public void tamanho() {
 		System.out.println("Tamanho da Fila: " + tamanhoFila);
-		tamanhoFila--;
 	}
 
 	public void frente() {

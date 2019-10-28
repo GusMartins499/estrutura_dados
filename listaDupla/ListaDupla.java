@@ -1,5 +1,7 @@
 package listaDupla;
 
+import javax.swing.JOptionPane;
+
 public class ListaDupla {
 	static int tamanho = 0;
 	Elemento inicio, atual, proximo, anterior, fim;
@@ -9,15 +11,13 @@ public class ListaDupla {
 		Elemento novo = new Elemento(v);
 		if (inicio == null) {
 			inicio = novo;
-			atual = novo;
-			proximo = null;
-			anterior = null;
+			fim = novo;
 		} else {
-			inicio.proximo = novo;
+			fim.proximo = novo;
 			novo.anterior = inicio;
 			fim = novo;
-			tamanho++;
 		}
+		tamanho++;
 		System.out.println("Elemento adicionado : " + novo.valor);
 	}
 
@@ -54,15 +54,36 @@ public class ListaDupla {
 		if (estaVazio()) {
 			System.out.println("ERRO - lista vazia");
 		} else {
+			Elemento retirado;
 			Elemento aux = vaiNaPosicao();
+			retirado = aux.proximo;
 			aux.proximo = null;
 			fim = aux;
+			tamanho--;
+			System.out.println("Elemento retirado: "+retirado.valor);
+		}
+	}
+
+	public void retiraQualquerPosicao() {
+		atual = inicio;
+		Elemento aux;
+		String op = "";
+		if (estaVazio()) {
+			System.out.println("Erro - lista vazia");
+		} else {
+			do {
+				op = JOptionPane.showInputDialog("Deseja retirar esse elemento ? (S/N) " + atual.valor);
+				aux = atual;
+				atual = atual.proximo;
+			} while (op.equalsIgnoreCase("N"));
+			aux.proximo = aux.proximo.proximo;
+			System.out.println("Elemento retirado: " + aux.valor);
 			tamanho--;
 		}
 	}
 
 	public Elemento vaiNaPosicao() {
-		Elemento aux = atual;
+		Elemento aux = inicio;
 		for (int i = 1; i < tamanho - 1; i++) {
 			aux = aux.proximo;
 		}
