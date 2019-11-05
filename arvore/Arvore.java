@@ -14,6 +14,7 @@ public class Arvore {
 	// ARRAY QUE ARMAZENA TODOS OS NO'S DA ARVORE E CONSEQUENTEMENTE O TAMANHO DELA
 	// TAMBÉM
 	static ArrayList<No> listaDeTodosNo = new ArrayList<No>();
+	static int tamanho = 0;
 
 	// METODO PARA INSTANCIAR A ARVORE
 	public Arvore() {
@@ -24,12 +25,13 @@ public class Arvore {
 	public void insere(No pai, No filho) {
 		if (raiz == null) {
 			raiz = filho;
+			tamanho++;
 			// raiz.filhos = null;
 		} else {
 			filho.pai = pai;
 			pai.filhos.add(filho);
-			//raiz.filhos.add(filho);
-
+			// raiz.filhos.add(filho);
+			tamanho++;
 		}
 	}
 
@@ -89,8 +91,7 @@ public class Arvore {
 
 	// RETORNA O TAMANHO DA ARVORE
 	public int retornaTamanho() {
-		elementos();
-		return listaDeTodosNo.size();
+		return tamanho;
 	}
 
 	/*
