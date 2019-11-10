@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Arvore {
 	/*
-	 * NA PRIMEIRA VEZ NO MAIN VAI PASSAR NO METODO INSERE(null, a) NA SEGUNDA VEZ,
-	 * VAI PASSAR NO METODO INSERE(A,B)
+	 * NA PRIMEIRA VEZ NO MAIN VAI PASSAR NO METODO INSERE(null, "a") NA SEGUNDA
+	 * VEZ, VAI PASSAR NO METODO INSERE("A","B")
 	 * 
 	 */
 
@@ -58,7 +58,7 @@ public class Arvore {
 
 	// TESTA SE UM NO É INTERNO
 	public boolean verificaInterno(No elemento) {
-		return elemento.filhos.size() == 0;
+		return elemento.filhos.size() != 0;
 	}
 
 	// TESTA SE UM NO É EXTERNO
@@ -110,7 +110,7 @@ public class Arvore {
 			No atualNaLista = listaDeTodosNo.get(i);
 			if (atualNaLista.equals(objAntigo)) {
 				objAuxiliar = atualNaLista;
-				atualNaLista.nomeDoNo = objNovo;
+				objAntigo.nomeDoNo = objNovo;
 			}
 			i++;
 		}

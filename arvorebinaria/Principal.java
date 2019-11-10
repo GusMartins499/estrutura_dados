@@ -29,10 +29,13 @@ public class Principal {
 
 		No no40 = new No(40);
 		treeBinaria.insere(no40);
+		
+		//System.out.println(treeBinaria.menorElemento());
+		//System.out.println(treeBinaria.maiorElemento());
 
 		// MOSTRA FILHOS É SÓ CHAMAR O MÉTODO MOSTRAFILHO QUE IRÁ MOSTRAR FUNCIONA COM
 		// QUALQUER NO - FUNCIONANDO
-		// treeBinaria.mostraFilho(no100);
+		//treeBinaria.mostraFilho(no80);
 
 		// REMOVE O NO SE ELE NÃO TEM NENHUM FILHO
 		// treeBinaria.mostraFilho(no60);

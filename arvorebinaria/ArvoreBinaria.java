@@ -104,4 +104,24 @@ public class ArvoreBinaria {
 	public void removeComDoisFilhos(No no) {
 
 	}
+
+	public int menorElemento() {
+		int menorValor = 0;
+		No objAux = raiz;
+		while (objAux.filhoEsquerda != null) {
+			menorValor = objAux.filhoEsquerda.valor;
+			objAux = objAux.filhoEsquerda;
+		}
+		return menorValor;
+	}
+	
+	public int maiorElemento() {
+		int maiorValor=0;
+		No objAux=raiz;
+		while(objAux.filhoDireita != null) {
+			maiorValor = objAux.filhoDireita.valor;
+			objAux = objAux.filhoDireita;
+		}
+		return maiorValor;
+	}
 }

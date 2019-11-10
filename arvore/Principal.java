@@ -34,10 +34,18 @@ public class Principal {
 		tree.insere(noG, noI);
 
 		System.out.println("Raiz: " + tree.raiz());
-		System.out.println("Pai de qualquer nó: " + tree.pai(noF));
-		//RETORNA OS FILHOS DE QUALQUER NÓ
+		System.out.println("Pai de qualquer nó: " + tree.pai(noG));
+		// RETORNA OS FILHOS DE QUALQUER NÓ
 		tree.filhos(noRaiz);
 		System.out.println("Tamanho da tree: " + tree.retornaTamanho());
+		for (int i = 0; i < tree.retornaTamanho(); i++) {
+			System.out.print(tree.elementos().get(i).nomeDoNo+",");
+		}
+		tree.atualizaElemento(noB, "x");
+		System.out.println();
+		for (int i = 0; i < tree.retornaTamanho(); i++) {
+			System.out.print(tree.elementos().get(i).nomeDoNo+",");
+		}
 	}
 
 }
